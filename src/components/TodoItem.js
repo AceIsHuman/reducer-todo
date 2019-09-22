@@ -4,7 +4,10 @@ const TodoItem = props => {
     const todo = props.todo;
 
     return (
-        <div className={todo.completed ? 'todo completed' : 'todo'}>
+        <div className={todo.completed ? 'todo completed' : 'todo'}
+            onClick={() => {
+                props.dispatch({type: "TOGGLE_COMPLETED", payload: props.index})
+            }}>
             <p>{todo.item}</p>
         </div>
     )
