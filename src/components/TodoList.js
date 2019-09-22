@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { todoReducer, initialTodoState } from '../reducers/todoReducer';
 
 import TodoItem from './TodoItem';
+import AddTodo from './AddTodo';
 
 const TodoList = () => {
     const [state, dispatch] = useReducer(todoReducer, initialTodoState);
@@ -9,6 +10,7 @@ const TodoList = () => {
 
     return (
         <div className="todo-list">
+            <AddTodo />
             {state.map(todo => (
                 <TodoItem key={todo.id} todo={todo} />
             ))}
