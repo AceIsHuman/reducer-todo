@@ -11,6 +11,10 @@ const TodoList = () => {
     return (
         <div className="todo-list">
             <AddTodo dispatch={dispatch} />
+            <button onClick={e => {
+                e.preventDefault();
+                dispatch({ type: "CLEAR_COMPLETED" })
+            }}>Clear Completed</button>
             {state.map((todo, i) => (
                 <TodoItem key={todo.id} todo={todo} index={i} dispatch={dispatch} />
             ))}

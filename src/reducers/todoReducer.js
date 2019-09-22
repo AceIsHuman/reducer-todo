@@ -18,6 +18,8 @@ export const todoReducer = (state, action) => {
             newState[action.payload].completed = !newState[action.payload].completed;
 
             return newState;
+        case "CLEAR_COMPLETED":
+            return state.filter(todo => !todo.completed)
         default:
             return state;
     }
