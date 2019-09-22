@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const AddTodo = () => {
+const AddTodo = props => {
     const [newTodo, setNewTodo] = useState();
 
     const handleChange = e => {
@@ -8,7 +8,15 @@ const AddTodo = () => {
     }
 
     return (
-        <form>
+        <form onSubmit={e => {
+            e.preventDefault();
+            props.dispatch({ type: "ADD_TODO", payload: {
+                item: newTodo,
+                completed: false,
+                id: new Date()
+            }})
+            }}>
+                
             <input name="todo-field" type="text" value={newTodo} onChange={handleChange}/>
             <button>Add</button>
         </form>

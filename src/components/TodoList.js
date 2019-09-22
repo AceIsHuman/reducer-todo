@@ -10,7 +10,7 @@ const TodoList = () => {
 
     return (
         <div className="todo-list">
-            <AddTodo />
+            <AddTodo dispatch={dispatch} />
             {state.map(todo => (
                 <TodoItem key={todo.id} todo={todo} />
             ))}
