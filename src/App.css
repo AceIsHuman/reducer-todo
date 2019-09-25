@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+}
+
+.todo.completed {
+  text-decoration: line-through;
+  color: lightgray;
+}
